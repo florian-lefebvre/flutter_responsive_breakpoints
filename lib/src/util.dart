@@ -11,7 +11,8 @@ class _ResponsiveUtil {
   static late _PlatformType platformType;
 
   static void setplatformType() {
-    if ((defaultTargetPlatform == TargetPlatform.iOS) || (defaultTargetPlatform == TargetPlatform.android)) {
+    if ((defaultTargetPlatform == TargetPlatform.iOS) ||
+        (defaultTargetPlatform == TargetPlatform.android)) {
       platformType = _PlatformType.mobile;
     } else if ((defaultTargetPlatform == TargetPlatform.linux) ||
         (defaultTargetPlatform == TargetPlatform.macOS) ||
@@ -22,14 +23,17 @@ class _ResponsiveUtil {
     }
   }
 
-  static void setScreenSize(BoxConstraints constraints, Orientation currentOrientation) {
+  static void setScreenSize(
+      BoxConstraints constraints, Orientation currentOrientation) {
     boxConstraints = constraints;
     orientation = currentOrientation;
     setplatformType();
 
     switch (platformType) {
       case _PlatformType.mobile:
-        width = orientation == Orientation.portrait ? boxConstraints.maxWidth : boxConstraints.maxHeight;
+        width = orientation == Orientation.portrait
+            ? boxConstraints.maxWidth
+            : boxConstraints.maxHeight;
         break;
       case _PlatformType.desktop:
         width = boxConstraints.maxWidth;

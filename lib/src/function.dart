@@ -18,7 +18,8 @@ class _Responsive<T> {
   final T? xl;
   final T? xxl;
 
-  _Responsive({required this.def, this.sm, this.md, this.lg, this.xl, this.xxl});
+  _Responsive(
+      {required this.def, this.sm, this.md, this.lg, this.xl, this.xxl});
 
   T get getSm => sm ?? def;
   T get getMd => md ?? getSm;
@@ -50,7 +51,8 @@ class _Responsive<T> {
 // are provided, the function will return the [sm] value for
 // all larger breakpoints.
 T responsive<T>({required T def, T? sm, T? md, T? lg, T? xl, T? xxl}) {
-  final _Responsive<T> _responsive = _Responsive<T>(def: def, sm: sm, md: md, lg: lg, xl: xl, xxl: xxl);
+  final _Responsive<T> _responsive =
+      _Responsive<T>(def: def, sm: sm, md: md, lg: lg, xl: xl, xxl: xxl);
   return _responsive.getValue();
 }
 
