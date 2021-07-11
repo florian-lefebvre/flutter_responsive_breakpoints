@@ -1,6 +1,6 @@
 # flutter_responsive_breakpoints
 
-Made by [Florian LEFEBVRE](https://github.com/florian-lefebvre).
+Made by [Florian LEFEBVRE](https://github.com/florian-lefebvre). Find the package on [Pub.dev](https://pub.dev/packages/flutter_responsive_breakpoints).
 
 This package provides breakpoints to help achieve responsive designs.
 
