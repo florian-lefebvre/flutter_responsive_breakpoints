@@ -38,8 +38,9 @@ import 'package:flutter_responsive_breakpoints/flutter_responsive_breakpoints.da
 Responsive(builder: (context) => MaterialApp())
 ```
 
-#### Use the function anywhere (after importing the package)
+#### Use it anywhere (after importing the package)
 
+##### `responsive` function
 ```dart
 responsive<Color>(def: Colors.red, sm: Colors.blue, xl: Colors.green)
 ```
@@ -54,6 +55,10 @@ If you're using the function a lot, you can use `r<T>()` instead like so:
 ```dart
 r<Color>(def: Colors.red, sm: Colors.blue, xl: Colors.green)
 ```
+
+##### Width and height extensions
+
+Like CSS, you can use `X.vw` to get a width percentage (example: 20.vw) and `X.vh` to get a height percentage (example: 20.vh).
 
 ## Acknowledgements
 

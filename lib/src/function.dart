@@ -44,18 +44,34 @@ class _Responsive<T> {
   }
 }
 
-// Get value of type T depending of the current breakpoint.
-//
-// [def] is required, all breakpoints are optional and can
-// be ommited. For example, if only [def] and [sm] parameters
-// are provided, the function will return the [sm] value for
-// all larger breakpoints.
+/// Get value of type T depending of the current breakpoint.
+///
+/// [def] is required, all breakpoints are optional and can
+/// be ommited. For example, if only [def] and [sm] parameters
+/// are provided, the function will return the [sm] value for
+/// all larger breakpoints.
+///
+/// | Breakpoint | Minimum width |
+/// | ---------- | ------------- |
+/// | sm         | 640px         |
+/// | md         | 768px         |
+/// | lg         | 1024px        |
+/// | xl         | 1280px        |
+/// | xxl        | 1536px        |
 T responsive<T>({required T def, T? sm, T? md, T? lg, T? xl, T? xxl}) {
   final _Responsive<T> _responsive =
       _Responsive<T>(def: def, sm: sm, md: md, lg: lg, xl: xl, xxl: xxl);
   return _responsive.getValue();
 }
 
-// Same as responsive<T>(...) but faster to type.
+/// Same as responsive<T>(...) but faster to type.
+///
+/// | Breakpoint | Minimum width |
+/// | ---------- | ------------- |
+/// | sm         | 640px         |
+/// | md         | 768px         |
+/// | lg         | 1024px        |
+/// | xl         | 1280px        |
+/// | xxl        | 1536px        |
 T r<T>({required T def, T? sm, T? md, T? lg, T? xl, T? xxl}) =>
     responsive<T>(def: def, sm: sm, md: md, lg: lg, xl: xl, xxl: xxl);

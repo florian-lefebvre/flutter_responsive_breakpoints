@@ -8,6 +8,7 @@ class _ResponsiveUtil {
   static late BoxConstraints boxConstraints;
   static late Orientation orientation;
   static late double width;
+  static late double height;
   static late _PlatformType platformType;
 
   static void setplatformType() {
@@ -34,12 +35,17 @@ class _ResponsiveUtil {
         width = orientation == Orientation.portrait
             ? boxConstraints.maxWidth
             : boxConstraints.maxHeight;
+        height = orientation != Orientation.portrait
+            ? boxConstraints.maxWidth
+            : boxConstraints.maxHeight;
         break;
       case _PlatformType.desktop:
         width = boxConstraints.maxWidth;
+        height = boxConstraints.maxHeight;
         break;
       case _PlatformType.web:
         width = boxConstraints.maxWidth;
+        height = boxConstraints.maxHeight;
         break;
     }
   }
